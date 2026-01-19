@@ -1,0 +1,38 @@
+[settings]
+width = 800
+height = 600
+theme = "dark"
+
+[[global]]
+key = "F1"
+name = "Help"
+icon = "" # Nerd Font Icon
+cmd = "xdg-open https://github.com/fortystory/niri-keypad"
+
+[[global]]
+key = "F2"
+name = "Switch App"
+icon = "/usr/share/icons/hicolor/48x48/apps/org.gnome.Software.svg" # Path example
+action = "menu:switcher"
+
+[[menu]]
+name = "switcher"
+title = "Application Switcher"
+items = [
+    # Niri doesn't support focus by app-id directly yet, so we query it via json
+    { key = "f", name = "Firefox", icon = "", cmd = "niri msg --json windows | jq -r '.[] | select(.app_id == \"firefox\") | .id' | head -n1 | xargs -I {} niri msg action focus-window --id {}" },
+    { key = "k", name = "Kitty",   icon = "", cmd = "niri msg --json windows | jq -r '.[] | select(.app_id == \"kitty\") | .id' | head -n1 | xargs -I {} niri msg action focus-window --id {}" }
+]
+
+[[context]]
+app_id = "firefox"
+menu = "browser_shortcuts"
+
+[[menu]]
+name = "browser_shortcuts"
+title = "Firefox Shortcuts"
+items = [
+    # Note: Using 'wtype' to simulate keystrokes (sudo apt install wtype)
+    # -M ctrl: press ctrl, -k f: press f, -m ctrl: release ctrl
+    { key = "f", name = "Search Page", icon = "", cmd = "wtype -M ctrl -k f -m ctrl" }
+]
