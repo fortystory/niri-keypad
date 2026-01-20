@@ -59,8 +59,8 @@ action = "menu:switcher"
 name = "switcher"
 title = "Application Switcher"
 items = [
-    { key = "f", name = "Firefox", icon = "firefox", cmd = "niri msg action focus-window --class firefox" },
-    { key = "k", name = "Kitty",   icon = "kitty",   cmd = "niri msg action focus-window --class kitty" }
+    { key = "f", name = "firefox", icon = "/usr/share/icons/Papirus-Dark/96x96/apps/firefox.svg", cmd = "~/.config/niri-keypad/switch-app.sh firefox" },
+    { key = "g", name = "ghostty", icon = "/usr/share/icons/Papirus-Dark/96x96/apps/com.mitchellh.ghostty.svg", cmd = "~/.config/niri-keypad/switch-app.sh com.mitchellh.ghostty" }
 ]
 
 # Context Mapping (Auto-switch menu based on focused app)
