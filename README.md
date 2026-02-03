@@ -2,6 +2,9 @@
 
 Niri Keypad is a global keypad and shortcut helper designed specifically for the [Niri](https://github.com/YaLTeR/niri) window manager. It provides a visual, interactive grid of shortcuts that can be contextual (based on the focused app) or global.
 
+<img width="1938" height="906" alt="2026-02-03_20-44" src="https://github.com/user-attachments/assets/3327c133-0979-4bf0-8250-10a8e83670f0" />
+
+
 ## Features
 
 *   **Visual Keypad**: Displays a grid of actionable cards mapped to keys (F-keys, QWERTY layout).
